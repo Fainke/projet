@@ -1,0 +1,172 @@
+main {
+    min-height: calc(100vh - 100px);
+}
+
+.exotic {
+    background-color: rgba(218, 165, 32, 0.17);
+}
+.card-deck {
+    margin-bottom: 1.75rem;
+}
+*{margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+
+footer{background: black;
+    color: white;
+    padding: 10px;
+
+}
+p.copy{text-align: left}
+/*map responsive*/
+
+.map-responsive {
+    padding-bottom:316px;
+    padding-left: 100%;
+    position:relative;
+    height:0;
+}
+
+.map-responsive iframe {
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+/*fin map responsive*/
+
+article.info{width: 286px;
+    height: auto;
+    color: white;
+    border-right: 100px solid black;
+    padding-top: 20px}
+
+h3~p{text-align: left}
+
+section.map{background: black;
+    height: auto}
+
+section.map{background: black;
+    height: auto}
+
+
+figcaption{color: white;
+    text-align: center;
+    padding-top: 235px;}
+
+h4.blog{text-align: center;
+    font-size: 700;
+    color: white;
+    text-transform: uppercase;
+    font-size:40px
+}
+article.new{padding-top: 44px}
+
+h4.blog~p{text-align: center;
+    color: white;
+    font-weight: 300}
+
+section.bleu{background: #2c3e6a;
+    height: auto;
+    min-height: 541px}
+
+h4.portfoliotitle ~ h5{color: dodgerblue;
+    text-align: center}
+
+h4.portfoliotitle{color: gray;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 48px;
+    font-weight: 700;
+    font-size:40px}
+
+
+figure.portfolio{background: gray;
+    width: 287px;
+    height: 284px;
+    outline: 14px solid black;
+    transition: 1s}
+
+
+figure.portfolio2{background: gray;
+    width: 284px;
+    height: 284px;
+    border: 10px solid #2c3e6a;
+    border-radius: 20px;
+    overflow: hidden
+}
+
+figure.portfolio:hover{background: red;
+
+}
+
+section.gris{background: #ebebf1;
+    min-height: 499px;
+    height: auto;
+    padding-top: 100px;
+    padding-bottom: 50px}
+
+article.service > h4.titre{color: black;
+    text-align: center}
+
+h4.titre ~ p{color: gray;
+    text-align: center;}
+
+section.numero{height: auto;
+    background: black;
+    padding-top: 14px;
+    padding-bottom: 14px}
+
+article.chiffre{ width: 189px;
+    height: 170px;
+    border: 1px solid white;
+    padding-top: 30px}
+
+h4{font-weight: 700;
+    font-size: 60px}
+
+.slider{background: black;
+    height: auto}
+
+.opac{background: rgba(0,0,0,.5);
+    width: 600px ;
+    height: 80px;
+    margin: 0 auto 20px}
+
+h5{text-align: center;
+    line-height: 40px}
+
+video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+    background-size: cover;
+    transition: 1s opacity;
+}
+.stopfade {
+    opacity: .5;
+}
+form {
+    margin: 0 auto;
+    width: 450px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
+article.chiffre>h4,p{color: blue;
+    text-align: center;
+}
