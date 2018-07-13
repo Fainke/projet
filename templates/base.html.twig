@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr-FR">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600" rel="stylesheet">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% endblock %}
+    </head>
+    <body>
+    {% block navbar %}
+        {{ include('partials/_navbar.html.twig') }}
+    {% endblock %}
+
+    <main>
+        {% if app.request.hasPreviousSession %}
+            {% for type, messages in app.session.flashbag.all() %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ type }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+        {% block body %}{% endblock %}
+    </main>
+
+    {% block footer %}
+        {{ include('partials/_footer.html.twig') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+    {% endblock %}
+
+    </body>
+</html>

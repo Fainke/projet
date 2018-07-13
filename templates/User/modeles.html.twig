@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des produits</h1>
+
+
+    {% for paquetDe3Produits in pagination | batch('3') %}
+        <div class="card-deck">
+            {% for modeles in paquetDe3Produits %}
+                <div class="card">
+                    <img class="card-img-top" src="{{ asset('images/modeles/' ~ modeles.imageName ) }}" alt="Cart image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ modeles.name | capitalize }}</h5>
+                        <p class="card-text">{{ modeles.description | slice(0, 100) }} ...</p>
+                        <p class="card-text">
+                            <a class="btn btn-link" href="{{path('app_modeles_detail',{ id : modeles.id }) }}"
+                            >Détail</a>
+                            {% if is_granted('ROLE_ADMIN') %}
+                            <a href="{{ path('app_modeles_update', {id:modeles.id}) }}"
+                               class="btn btn-outline-info">Modifier</a>
+
+                            <a href="{{ path('app_modeles_remove', {id:modeles.id}) }}"
+                               class="btn btn-outline-danger">Supprimer</a></p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+{% endblock %}

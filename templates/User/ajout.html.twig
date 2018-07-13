@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>{{ operation }} d'un produit</h1>
+
+    <video poster="" id="bgvid" playsinline autoplay muted loop>
+        <source src="{{ asset ('video/video(1).mp4') }}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        <source src="{{ asset ('video/video(1).ogv') }}" type='video/ogg; codecs="theora, vorbis"'>
+    </video>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="{{ operationBtn }}" class="btn btn-success">
+    {{ form_end(form) }}
+
+{% endblock %}

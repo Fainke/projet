@@ -1,0 +1,35 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/sigin.css') }}">
+
+{% endblock %}
+{% block fos_user_content %}
+    {% trans_default_domain 'FOSUserBundle' %}
+    {% if error %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ error.messageKey|trans(error.messageData, 'security') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+    {% endif %}
+    <h1>Connexion</h1>
+    <form  class="form-signin" action="{{ path("fos_user_security_check") }}" method="post">
+        {% if csrf_token %}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        {% endif %}
+        <label for={{ 'security.login.username'|trans }} class="sr-only">Username</label>
+        <input type="username" id="username" name="_username" class="form-control" placeholder="Username" required="" autofocus="">
+        <label for={{ 'security.login.password'|trans }} class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name="_password" class="form-control" placeholder="Password" required="">
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value={{ 'security.login.submit'|trans }}> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" value="{{ path('app_home_index') }}">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+    </form>
+{% endblock fos_user_content %}
